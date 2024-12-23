@@ -1,0 +1,144 @@
+<div class="ctn">
+    <div class="container pt-4">
+        <form>
+          <!-- Section: Supplier Information -->
+          <fieldset class="border p-3 mb-4 shadow rounded bg-light">
+            <legend class="w-100 text-center px-2 text-primary fw-bold mb-3">Supplier Information</legend>
+            
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="companyName" class="form-label fw-bold">Company Full Name <span class="text-danger">*</span></label>
+                <input type="text" id="companyName" class="form-control shadow" placeholder="Please enter the name as per license." required />
+                <!-- <small class="form-text text-muted">Please enter the name as per license.</small> -->
+              </div>
+              <div class="col-md-6">
+                <label for="country" class="form-label fw-bold">Country <span class="text-danger">*</span></label>
+                <!-- <select id="country" class="form-select shadow" required>
+                  <option value="">Select Country</option>
+                   Dynamic country options 
+                </select> -->
+                <div class="w-100">
+                  <mat-select-country
+                      label="Select Country"
+                      (onCountrySelected)="onCountrySelected($event)">
+                  </mat-select-country>
+                </div>
+              </div>
+            </div>
+      
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="contactFirstName" class="form-label fw-bold">Contact Person First Name <span class="text-danger">*</span></label>
+                <input type="text" id="contactFirstName" class="form-control shadow" placeholder="Enter first name" required />
+              </div>
+              <div class="col-md-6">
+                <label for="contactLastName" class="form-label fw-bold">Contact Person Last Name <span class="text-danger">*</span></label>
+                <input type="text" id="contactLastName" class="form-control shadow" placeholder="Enter last name" required />
+              </div>
+            </div>
+      
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="email" class="form-label fw-bold">Email Address <span class="text-danger">*</span></label>
+                <input type="email" id="email" class="form-control shadow" placeholder="example@domain.com" required />
+              </div>
+              <div class="col-md-6">
+                <label for="phone" class="form-label fw-bold">Phone Number <span class="text-danger">*</span></label>
+                <input type="tel" id="phone" class="form-control shadow" placeholder="+971XXXXXXX" required />
+              </div>
+            </div>
+          </fieldset>
+      
+          <!-- Section: Buyer Response -->
+          <fieldset class="border p-3 mb-4 shadow rounded bg-light">
+            <legend class="w-100 text-center fw-bold px-2 text-primary mb-3">Buyer Response</legend>
+      
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="leadBuyer" class="form-label fw-bold">Lead Buyer <span class="text-danger">*</span></label>
+                <input type="text" id="leadBuyer" class="form-control shadow" placeholder="Enter lead buyer name/email" required />
+              </div>
+              <div class="col-md-6">
+                <label for="contractOwner" class="form-label fw-bold">Contract Owner/End User <span class="text-danger">*</span></label>
+                <input type="text" id="contractOwner" class="form-control shadow" placeholder="Enter contract owner name/email" required />
+              </div>
+            </div>
+      
+            <div class="mb-3">
+              <label class="form-label fw-bold">Type of Buyer Engagement <span class="text-danger">*</span></label>
+              <div class="d-flex flex-wrap gap-3">
+                <div class="form-check">
+                  <input class="form-check-input shadow" type="radio" id="singleSource" name="buyerEngagement" value="Single Source" required />
+                  <label class="form-check-label" for="singleSource">Single Source</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input shadow" type="radio" id="purchaseOrder" name="buyerEngagement" value="Purchase Order" />
+                  <label class="form-check-label" for="purchaseOrder">Purchase Order</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input shadow" type="radio" id="tender" name="buyerEngagement" value="Tender" />
+                  <label class="form-check-label" for="tender">Tender</label>
+                </div>
+              </div>
+            </div>
+      
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="taxonomy" class="form-label fw-bold">Taxonomy</label>
+                <input type="text" id="taxonomy" class="form-control shadow" placeholder="Enter taxonomy (e.g., M.C.00.01)" />
+                <small><a href="#" class="text-primary">View taxonomy guidelines</a></small>
+              </div>
+              <div class="col-md-6">
+                <label for="originCountry" class="form-label fw-bold">Country of Origin(s) for material/service to be supplied <span class="text-danger">*</span></label>
+                <select id="originCountry" class="form-select shadow" required>
+                  <option value="">Select Country</option>
+                  <!-- Dynamic country options -->
+                </select>
+              </div>
+            </div>
+      
+            <div class="mb-3">
+              <label class="form-label fw-bold">Is a Contract Already in Place? <span class="text-danger">*</span></label>
+              <div class="d-flex flex-wrap gap-3">
+                <div class="form-check">
+                  <input class="form-check-input shadow" type="radio" id="contractYes" name="contractInPlace" value="Yes" required />
+                  <label class="form-check-label" for="contractYes">Yes</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input shadow" type="radio" id="contractNo" name="contractInPlace" value="No" />
+                  <label class="form-check-label" for="contractNo">No</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+      
+          <!-- Section: Requester  -->
+          <fieldset class="border p-3 shadow rounded bg-light">
+            <legend class="w-100 text-center pb-4 px-2 text-primary mb-3 fw-bold">Requester</legend>
+      
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="preparedBy" class="form-label fw-bold">Prepared & Submitted By</label>
+                <input type="text" id="preparedBy" class="form-control shadow" value="Ibrahima DIENG" readonly />
+              </div>
+              <div class="col-md-6">
+                <label for="requestDate" class="form-label fw-bold">Request Date</label>
+                <input type="date" id="requestDate" class="form-control shadow" value="2024-12-23" readonly />
+              </div>
+            </div>
+      
+            <div class="mb-3">
+              <label for="comments" class="form-label fw-bold">Comments</label>
+              <textarea id="comments" class="form-control shadow" rows="3" placeholder="Enter any additional comments"></textarea>
+            </div>
+          </fieldset>
+      
+          <div class="row p-4">
+            <div class="col text-center">
+                <button type="submit" class="btn btn-primary shadow">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+</div>

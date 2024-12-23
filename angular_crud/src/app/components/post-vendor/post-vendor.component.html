@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <h2>Add Vendor</h2>
+    <form [formGroup]="postVendorForm" (ngSubmit)="onSubmit()">
+      <div class="form-group" >
+        <label for="name">Name:</label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+        <div *ngIf="postVendorForm.get('name')?.invalid && (postVendorForm.get('name')?.touched 
+                || postVendorForm.get('name')?.dirty)" class="text-danger">
+            <small>Name is required.</small>
+          </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" class="form-control" formControlName="email">
+        <div *ngIf="postVendorForm.get('email')?.invalid && (postVendorForm.get('email')?.touched 
+              || postVendorForm.get('email')?.dirty)" class="text-danger">
+            <small *ngIf="postVendorForm.get('email')?.errors?.['required']">Email is required.</small>
+            <small *ngIf="postVendorForm.get('email')?.errors?.['email']">Email must be a valid email address.</small>
+          </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" class="form-control" formControlName="phone">
+        <div *ngIf="postVendorForm.get('phone')?.invalid && (postVendorForm.get('phone')?.touched 
+            || postVendorForm.get('phone')?.dirty)" class="text-danger">
+            <small>Phone is required.</small>
+          </div>
+      </div>
+  
+      <button type="submit" class="btn btn-sm btn-primary mt-3" [disabled]="postVendorForm.invalid">Add Vendor</button>
+    </form>
+  </div>
+  

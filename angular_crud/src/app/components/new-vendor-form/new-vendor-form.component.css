@@ -1,0 +1,41 @@
+.ctn {
+    background-color: #ECF0F5;
+}
+
+/* Example in your component's SCSS file */
+mat-select-country {
+    /* Change the background color */
+    background-color: #f0f0f0;
+  
+    /* Add padding */
+    /* padding: 10px; */
+    
+  
+    /* Style the label */
+    .mat-select-placeholder {
+      font-size: 16px;
+      color: #3f51b5; /* Blue color */
+    }
+  
+    /* Style the country dropdown options */
+    .mat-option {
+      font-size: 14px;
+      color: #333;
+      
+      &:hover {
+        background-color: #c5cae9; /* Light blue hover */
+      }
+    }
+  
+    /* Customize the dropdown arrow */
+    .mat-select-arrow {
+      color: #3f51b5;
+    }
+  
+    /* Style the selection box */
+    .mat-select-trigger {
+      font-size: 14px;
+      color: #333;
+    }
+  }
+  
